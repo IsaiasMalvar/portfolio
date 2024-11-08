@@ -51,7 +51,7 @@ export const ProjectsSection = () => {
     <section className="pb-16 lg:py-24  overflow-clip">
       <div className="container">
         <div className="flex justify-center">
-          <p className="uppercase tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text">
+          <p className="sm:text-4xl text-5xl uppercase tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text">
             Code in action
           </p>
         </div>

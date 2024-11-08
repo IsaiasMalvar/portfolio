@@ -11,7 +11,7 @@ export const HeroSection = () => {
   return (
     <div className="py-28 md:py-38 lg:py-45 relative z-0 overflow-x-clip">
       <div
-        className="absolute inset-0 mask-image:linear-gradient(to_bottom, transparent, black_10%,black_70%,transparent)"
+        className="absolute inset-0"
         style={{
           maskImage:
             "linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7), transparent)",
@@ -68,18 +68,13 @@ export const HeroSection = () => {
           className="size-[250px] md:size-[350px]"
           alt="Man sitting with laptop"
         />
-        <div className="bg-cyan-50/5 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg mt-2 w-72 h-14 overflow-hidden relative ">
-          <div className="text-lg font-medium marquee-text">
-            ISAIAS MALVAR GUIOS
-          </div>
-        </div>
       </div>
-      <div className="max-w-lg mx-auto">
-        <h1 className="font-serif text-3xl text-center mt-8 tracking-wide md:text-5xl">
-          Crafting Scalable Solutions from Frontend to Backend
+      <div className="w-full mx-auto">
+        <h1 className="font-serif text-2xl text-center mt-8 tracking-widest md:text-5xl px-5">
+          Isaias Malvar Guios <span>&bull;</span> Fullstack Developer
         </h1>
-        <p className="mt-4 text-center text-white/60 md:text-lg">
-          My skills are focused in providing self-reliant, trustworthy sofware.
+        <p className="mt-4 text-center text-white/90 md:text-lg tracking-wide">
+          Focused in providing self-reliant, trustworthy sofware.
         </p>
       </div>
       <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">

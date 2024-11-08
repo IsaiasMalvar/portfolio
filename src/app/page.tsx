@@ -4,7 +4,7 @@ import { ProjectsSection } from "@/sections/Projects";
 
 export default function Home() {
   return (
-    <div>
+    <div className="relative">
       <Header />
       <HeroSection />
       <ProjectsSection />

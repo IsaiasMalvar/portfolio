@@ -9,8 +9,14 @@ import SparkleIcon from "@/assets/icons/sparkle.svg";
 
 export const HeroSection = () => {
   return (
-    <div className="py-32 md:py-38 lg:py-45 relative z-0 overflow-x-clip">
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom, transparent, black_10%,black_70%,transparent)">
+    <div className="py-28 md:py-38 lg:py-45 relative z-0 overflow-x-clip">
+      <div
+        className="absolute inset-0 mask-image:linear-gradient(to_bottom, transparent, black_10%,black_70%,transparent)"
+        style={{
+          maskImage:
+            "linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7), transparent)",
+        }}
+      >
         <div
           className="absolute inset-0 -z-30 opacity-5"
           style={{
@@ -21,26 +27,29 @@ export const HeroSection = () => {
         <div className=" size-[820px] hero-ring"></div>
         <div className=" size-[1020px] hero-ring"></div>
         <div className=" size-[1220px] hero-ring"></div>
+        <div className=" size-[1420px] hero-ring"></div>
+        <div className=" size-[1600px] hero-ring"></div>
+
         <HeroOrbit size={800} rotation={-72}>
-          <StartIcon className="size-28 text-cyan-300" />
+          <StartIcon className="size-28 text-cyan-200" />
         </HeroOrbit>
         <HeroOrbit size={640} rotation={34}>
-          <StartIcon className="size-8 text-cyan-300" />
+          <StartIcon className="size-8 text-cyan-600" />
         </HeroOrbit>
         <HeroOrbit size={590} rotation={98}>
-          <StartIcon className="size-12 text-cyan-300" />
+          <StartIcon className="size-12 text-cyan-600" />
         </HeroOrbit>
-        <HeroOrbit size={430} rotation={-14}>
-          <SparkleIcon className="size-8 text-cyan-300/20" />
+        <HeroOrbit size={430} rotation={-5}>
+          <SparkleIcon className="size-8 text-cyan-500 animate-pulse" />
         </HeroOrbit>
         <HeroOrbit size={440} rotation={79}>
-          <SparkleIcon className="size-8 text-cyan-300/20" />
+          <SparkleIcon className="size-8 text-cyan-500 animate-pulse" />
         </HeroOrbit>
-        <HeroOrbit size={530} rotation={178}>
-          <SparkleIcon className="size-10 text-cyan-300/20" />
+        <HeroOrbit size={530} rotation={140}>
+          <SparkleIcon className="size-8 text-cyan-500 animate-pulse" />
         </HeroOrbit>
-        <HeroOrbit size={710} rotation={144}>
-          <SparkleIcon className="size-14 text-cyan-300/20" />
+        <HeroOrbit size={710} rotation={164}>
+          <SparkleIcon className="size-14 text-cyan-500 animate-pulse" />
         </HeroOrbit>
         <HeroOrbit size={710} rotation={85}>
           <div className="size-3 rounded-full bg-cyan-300/20"></div>
@@ -59,9 +68,10 @@ export const HeroSection = () => {
           className="size-[250px] md:size-[350px]"
           alt="Man sitting with laptop"
         />
-        <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg mt-2">
-          <div className="bg-green-500 size-2.5 rounded-full"></div>
-          <div className="text-sm font-medium">Available for new projects</div>
+        <div className="bg-cyan-50/5 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg mt-2 w-72 h-14 overflow-hidden relative ">
+          <div className="text-lg font-medium marquee-text">
+            ISAIAS MALVAR GUIOS
+          </div>
         </div>
       </div>
       <div className="max-w-lg mx-auto">

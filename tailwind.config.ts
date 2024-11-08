@@ -25,6 +25,10 @@ const config: Config = {
         sans: "var(--font-sans)",
         serif: "var(--font-serif",
       },
+      duration: {
+        "10000": "10000ms",
+        "5000": "5000ms",
+      },
     },
   },
   plugins: [],

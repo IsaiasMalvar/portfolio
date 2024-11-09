@@ -5,7 +5,7 @@ import Image from "next/image";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/sky.jpg";
-import planets from "@/assets/images/waves.png";
+import { SectionHeader } from "@/components/SectionHeader";
 
 const portfolioProjects = [
   {
@@ -48,21 +48,14 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24  overflow-clip">
+    <section className="overflow-clip pb-16 lg:py-24">
       <div className="container">
-        <div className="flex justify-center">
-          <p className="sm:text-4xl text-5xl uppercase tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text">
-            Code in action
-          </p>
-        </div>
-        <h2 className="font-serif text-3xl text-center mt-6 md:text-5xl">
-          Featured Projects
-        </h2>
-        <div className="flex flex-col mt-10 gap-20 md:mt-20">
+        <SectionHeader eyebrow="Code in action" title="Featured Projects" />
+        <div className="mt-10 flex flex-col gap-20 md:mt-20">
           {portfolioProjects.map((project) => (
             <div
               key={project.title}
-              className="bg-gray-800 rounded-3xl relative z-0 after:z-10 overflow-hidden after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 after:pointer-events-none md:pt-12 md:px-10 lg:pt-16 lg:px-20"
+              className="relative z-0 overflow-hidden rounded-3xl bg-gray-800 px-8 pt-8 after:pointer-events-none after:absolute after:inset-0 after:z-10 after:rounded-3xl after:outline after:outline-2 after:-outline-offset-2 after:outline-white/20 after:content-[''] md:px-10 md:pt-12 lg:px-20 lg:pt-16"
             >
               {" "}
               <div
@@ -71,18 +64,18 @@ export const ProjectsSection = () => {
                   backgroundImage: `url(${grainImage.src})`,
                 }}
               ></div>
-              <div className="lg:grid lg:grid-cols-2 lg:gap-16 ">
+              <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
-                  <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold uppercase tracking-widest text-small gap-2 text-transparent bg-clip-text ">
+                  <div className="text-small inline-flex gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text font-bold uppercase tracking-widest text-transparent">
                     <span>{project.company}</span>
                     <span>&bull;</span>
                     <span>{project.year}</span>
                   </div>
-                  <h3 className="font-serif text-2xl mt-2 md:mt-5 md:text-4xl">
+                  <h3 className="font-serif mt-2 text-2xl md:mt-5 md:text-4xl">
                     {project.title}
                   </h3>
-                  <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-                  <ul className="flex flex-col gap-4 mt-4 md:mt-5">
+                  <hr className="mt-4 border-t-2 border-white/5 md:mt-5" />
+                  <ul className="mt-4 flex flex-col gap-4 md:mt-5">
                     {project.results.map((result) => (
                       <li
                         key={result.title + "li"}
@@ -94,7 +87,7 @@ export const ProjectsSection = () => {
                     ))}
                   </ul>
                   <a href={project.link}>
-                    <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6">
+                    <button className="mt-8 inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-white px-6 font-semibold text-gray-950 md:w-auto">
                       <span>Go to Site</span>
                       <ArrowUpRight className="size-4" />
                     </button>
@@ -104,7 +97,7 @@ export const ProjectsSection = () => {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                    className="-mb-4 mt-8 md:-mb-0 lg:absolute lg:mt-0 lg:h-full lg:w-auto lg:max-w-none"
                   />
                 </div>
               </div>

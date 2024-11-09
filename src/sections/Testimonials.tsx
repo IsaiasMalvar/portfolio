@@ -1,42 +1,73 @@
-import memojiAvatar1 from "@/assets/images/memoji-avatar-1.png";
-import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
-import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
-import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
-import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
+import qualentum from "@/assets/images/qualentum.png";
+import isdi from "@/assets/images/isdi.png";
+import ull from "@/assets/images/ull.jpg";
+import dit from "@/assets/images/DIT (1).png";
+import Image from "next/image";
+import { SectionHeader } from "@/components/SectionHeader";
+import grainImage from "@/assets/images/grain.jpg";
 
-const testimonials = [
+const certifications = [
   {
-    name: "Alex Turner",
-    position: "Marketing Manager @ TechStartups",
-    text: "Alex was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
-    avatar: memojiAvatar1,
+    name: "Qualentum",
+    position: "Backend Bootcamp - Java Spring Specialization",
+    text: "Diving into backend development transformed my approach to building scalable applications. Through my Java specialization, I mastered tools like Docker for containerization, optimized data flow with database and caching techniques, and streamlined processes using Spring Boot",
+    avatar: qualentum,
   },
   {
-    name: "Olivia Green",
-    position: "Head of Design @ GreenLeaf",
-    text: "Working with Alex was a pleasure. His expertise in frontend development brought our designs to life in a way we never imagined. The website has exceeded our expectations.",
-    avatar: memojiAvatar2,
+    name: "Isdicoders",
+    position: "Fullstack web development",
+    text: "My journey through ISDI Coders laid a solid foundation in web development. Working with the MERN stack and TypeScript, I built a full-stack CRUD application from the ground up, deepening my understanding of creating dynamic and responsive web app",
+    avatar: isdi,
   },
   {
-    name: "Daniel White",
-    position: "CEO @ InnovateCo",
-    text: "Alex's ability to create seamless user experiences is unmatched. Our website has seen a significant increase in conversions since launching the new design. We couldn't be happier.",
-    avatar: memojiAvatar3,
+    name: "Universidad de La Laguna",
+    position: "Grado en Turismo",
+    text: "For my thesis at Universidad de La Laguna, I explored the impact of technological startups in the tourism industry—a project that earned academic recognition and sparked my passion for software. Analyzing how tech innovation reshapes travel experiences became the gateway to my career in web development, where I aim to bridge the worlds of technology and tourism",
+    avatar: ull,
   },
   {
-    name: "Emily Carter",
-    position: "Product Manager @ GlobalTech",
-    text: "Alex is a true frontend wizard. He took our complex product and transformed it into an intuitive and engaging user interface. We're already seeing positive feedback from our customers.",
-    avatar: memojiAvatar4,
-  },
-  {
-    name: "Michael Brown",
-    position: "Director of IT @ MegaCorp",
-    text: "Alex's work on our website has been nothing short of exceptional. He's a talented developer who is also a great communicator. We highly recommend him.",
-    avatar: memojiAvatar5,
+    name: "Dublin Institute of Technology",
+    position: "Erasmus year - Tourism Marketing Specialization",
+    text: "My Erasmus year at Dublin Institute of Technology was pivotal in honing my English proficiency and adapting to the pace of a vibrant, urban environment..",
+    avatar: dit,
   },
 ];
 
 export const TestimonialsSection = () => {
-  return <div>Testimonials Section</div>;
+  return (
+    <div className="py-16">
+      <div className="container">
+        <SectionHeader
+          eyebrow="Certifiably Skilled"
+          title="Academic recognitions"
+        />
+        <p>Certifiably Skilled</p>
+        <h2>Academic recognitions</h2>
+        <div>
+          {certifications.map((testimonal) => (
+            <div
+              key={testimonal.name}
+              className="relative z-0 overflow-hidden rounded-3xl bg-gray-800 p-6"
+            >
+              <div
+                className="absolute inset-0 -z-10 opacity-5"
+                style={{
+                  backgroundImage: `url(${grainImage.src})`,
+                }}
+              ></div>
+              <Image
+                src={testimonal.avatar}
+                alt={testimonal.name}
+                width={100}
+                height={100}
+              />
+              <div>{testimonal.name}</div>
+              <div>{testimonal.position}</div>
+              <p>{testimonal.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };

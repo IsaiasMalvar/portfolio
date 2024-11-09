@@ -4,8 +4,9 @@ import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Image from "next/image";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/sky.jpg";
+import sky from "@/assets/images/sky.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
+import Card from "@/components/Card";
 
 const portfolioProjects = [
   {
@@ -48,22 +49,15 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="overflow-clip pb-16 lg:py-24">
+    <section className="relative overflow-clip pb-16 lg:py-24">
       <div className="container">
         <SectionHeader eyebrow="Code in action" title="Featured Projects" />
         <div className="mt-10 flex flex-col gap-20 md:mt-20">
           {portfolioProjects.map((project) => (
-            <div
+            <Card
               key={project.title}
-              className="relative z-0 overflow-hidden rounded-3xl bg-gray-800 px-8 pt-8 after:pointer-events-none after:absolute after:inset-0 after:z-10 after:rounded-3xl after:outline after:outline-2 after:-outline-offset-2 after:outline-white/20 after:content-[''] md:px-10 md:pt-12 lg:px-20 lg:pt-16"
+              className="px-8 pb-0 pt-8 md:px-10 md:pt-12 lg:px-20 lg:pt-16"
             >
-              {" "}
-              <div
-                className="absolute inset-0 -z-10 opacity-20"
-                style={{
-                  backgroundImage: `url(${grainImage.src})`,
-                }}
-              ></div>
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
                   <div className="text-small inline-flex gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text font-bold uppercase tracking-widest text-transparent">
@@ -71,7 +65,7 @@ export const ProjectsSection = () => {
                     <span>&bull;</span>
                     <span>{project.year}</span>
                   </div>
-                  <h3 className="font-serif mt-2 text-2xl md:mt-5 md:text-4xl">
+                  <h3 className="mt-2 text-2xl md:mt-5 md:text-4xl">
                     {project.title}
                   </h3>
                   <hr className="mt-4 border-t-2 border-white/5 md:mt-5" />
@@ -101,7 +95,7 @@ export const ProjectsSection = () => {
                   />
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

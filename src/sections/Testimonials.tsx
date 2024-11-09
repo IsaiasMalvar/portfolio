@@ -1,42 +1,113 @@
-import memojiAvatar1 from "@/assets/images/memoji-avatar-1.png";
-import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
-import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
-import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
-import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
+import qualentum from "@/assets/images/qual.png";
+import isdi from "@/assets/images/isdi.png";
+import ull from "@/assets/images/ull.jpg";
+import dit from "@/assets/images/DIT (1).png";
+import Image from "next/image";
+import { SectionHeader } from "@/components/SectionHeader";
+import Card from "@/components/Card";
 
-const testimonials = [
+const certifications = [
   {
-    name: "Alex Turner",
-    position: "Marketing Manager @ TechStartups",
-    text: "Alex was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
-    avatar: memojiAvatar1,
+    name: "Qualentum",
+    position: "Backend Bootcamp - Java Spring Specialization",
+    text: (
+      <>
+        Diving into backend development transformed my approach to building
+        scalable applications. Through my <b>Java</b> specialization, I mastered
+        tools like <b>Docker</b> for containerization, optimized data flow with{" "}
+        <b>database</b> and <b>caching</b> techniques, and streamlined processes
+        using <b>Spring Boot</b>.
+      </>
+    ),
+    avatar: qualentum,
   },
   {
-    name: "Olivia Green",
-    position: "Head of Design @ GreenLeaf",
-    text: "Working with Alex was a pleasure. His expertise in frontend development brought our designs to life in a way we never imagined. The website has exceeded our expectations.",
-    avatar: memojiAvatar2,
+    name: "Isdicoders",
+    position: "Fullstack web development",
+    text: (
+      <>
+        My journey through <b>ISDI Coders</b> laid a solid foundation in web
+        development. Working with the <b>MERN</b> stack and <b>TypeScript</b>, I
+        built a full-stack <b>CRUD application</b> from the ground up, deepening
+        my understanding of creating <b>dynamic</b> and <b>responsive</b> web
+        apps.
+      </>
+    ),
+    avatar: isdi,
   },
   {
-    name: "Daniel White",
-    position: "CEO @ InnovateCo",
-    text: "Alex's ability to create seamless user experiences is unmatched. Our website has seen a significant increase in conversions since launching the new design. We couldn't be happier.",
-    avatar: memojiAvatar3,
+    name: "Universidad de La Laguna",
+    position: "Grado en Turismo",
+    text: (
+      <>
+        For my thesis at <b>Universidad de La Laguna</b>, I explored the impact
+        of <b>technological startups</b> in the tourism industry—a project that
+        earned academic recognition and sparked my passion for <b>software</b>.
+        Analyzing how <b>tech innovation</b> reshapes travel experiences became
+        the gateway to my career in <b>web development</b>, where I aim to
+        bridge the worlds of <b>technology</b> and <b>tourism</b>.
+      </>
+    ),
+    avatar: ull,
   },
   {
-    name: "Emily Carter",
-    position: "Product Manager @ GlobalTech",
-    text: "Alex is a true frontend wizard. He took our complex product and transformed it into an intuitive and engaging user interface. We're already seeing positive feedback from our customers.",
-    avatar: memojiAvatar4,
-  },
-  {
-    name: "Michael Brown",
-    position: "Director of IT @ MegaCorp",
-    text: "Alex's work on our website has been nothing short of exceptional. He's a talented developer who is also a great communicator. We highly recommend him.",
-    avatar: memojiAvatar5,
+    name: "Dublin Institute of Technology",
+    position: "Erasmus year - Tourism Marketing Specialization",
+    text: (
+      <>
+        My <b>Erasmus year</b> at <b>Dublin Institute of Technology</b> was
+        pivotal in honing my <b>English proficiency</b> and adapting to the pace
+        of a <b>vibrant, urban environment</b>.
+      </>
+    ),
+    avatar: dit,
   },
 ];
 
 export const TestimonialsSection = () => {
-  return <div>Testimonials Section</div>;
+  return (
+    <div className="py-16 lg:py-24">
+      <div className="container">
+        <SectionHeader
+          eyebrow="Certifiably Skilled"
+          title="Academic recognitions"
+        />
+        <div
+          className="mt-16 flex overflow-clip lg:mt-24"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent, 20%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), black)",
+          }}
+        >
+          <div className="flex flex-none gap-8">
+            {certifications.map((testimonial) => (
+              <Card
+                key={testimonial.name}
+                className="max-w-xs md:max-w-md md:p-8"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="inline-flex size-14 flex-none items-center justify-center rounded-full bg-gray-700 p-2">
+                    <Image
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      className="max-h-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <div className="font-sans">{testimonial.name}</div>
+                    <div className="text-sm tracking-wide text-white/70">
+                      {testimonial.position}
+                    </div>
+                  </div>
+                </div>
+                <p className="font-serif mt-4 text-sm font-extralight leading-6">
+                  {testimonial.text}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };

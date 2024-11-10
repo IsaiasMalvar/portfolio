@@ -1,3 +1,4 @@
+"use client";
 import Card from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
 import TypescriptIcon from "@/assets/icons/typescript.svg";
@@ -10,6 +11,8 @@ import SQLIcon from "@/assets/icons/sql-svgrepo-com.svg";
 import CardHeader from "@/components/CardHeader";
 import ToolBoxItems from "@/components/ToolboxItems";
 import Tailwind from "@/assets/icons/tailwind-svgrepo-com.svg";
+import { motion } from "framer-motion";
+
 const toolBoxItems = [
   {
     title: "TypeScript",
@@ -115,19 +118,20 @@ export const AboutSection = () => {
             <CardHeader description="Beyond software" className="px-6 py-6" />
             <div className="relative flex-1">
               {hobbies.map((hobby) => (
-                <div
+                <motion.div
                   key={hobby.title}
-                  className="absolute inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 px-6 py-1.5"
+                  className="po absolute inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 px-6 py-1.5"
                   style={{
                     left: hobby.left,
                     top: hobby.top,
                   }}
+                  drag
                 >
                   <span className="font-medium text-gray-950">
                     {hobby.title}
                   </span>
                   <span>{hobby.emoji}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </Card>

@@ -29,6 +29,17 @@ const config: Config = {
         "10000": "10000ms",
         "5000": "5000ms",
       },
+      animation: {
+        "ping-large": "ping-large 5s ease-out",
+      },
+      keyframes: {
+        "ping-large": {
+          "75%,100%": {
+            transform: "scale(3)",
+            opacity: "0",
+          },
+        },
+      },
     },
   },
   plugins: [],

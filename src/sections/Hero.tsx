@@ -30,36 +30,111 @@ export const HeroSection = () => {
         <div className="hero-ring size-[1420px]"></div>
         <div className="hero-ring size-[1600px]"></div>
 
-        <HeroOrbit size={800} rotation={-72}>
-          <StartIcon className="size-28 text-blue-500" />
-        </HeroOrbit>
-        <HeroOrbit size={640} rotation={34}>
-          <StartIcon className="size-8 text-cyan-600" />
-        </HeroOrbit>
-        <HeroOrbit size={590} rotation={98}>
-          <StartIcon className="size-12 text-blue-500" />
-        </HeroOrbit>
-        <HeroOrbit size={430} rotation={-5}>
-          <SparkleIcon className="size-8 animate-pulse text-cyan-500" />
-        </HeroOrbit>
-        <HeroOrbit size={440} rotation={79}>
-          <SparkleIcon className="size-8 animate-pulse text-blue-500" />
-        </HeroOrbit>
-        <HeroOrbit size={530} rotation={140}>
-          <SparkleIcon className="size-8 animate-pulse text-cyan-500" />
-        </HeroOrbit>
-        <HeroOrbit size={710} rotation={164}>
-          <SparkleIcon className="size-14 animate-pulse text-blue-500" />
-        </HeroOrbit>
-        <HeroOrbit size={710} rotation={85}>
-          <div className="size-3 rounded-full bg-cyan-300/20"></div>
-        </HeroOrbit>
-        <HeroOrbit size={520} rotation={-41}>
-          <div className="size-2 rounded-full bg-cyan-300/20"></div>
-        </HeroOrbit>
-        <HeroOrbit size={650} rotation={-5}>
-          <div className="size-2 rounded-full bg-cyan-300/20"></div>
-        </HeroOrbit>
+        <div>
+          <HeroOrbit
+            size={800}
+            rotation={-72}
+            shouldOrbit={true}
+            duration="25s"
+            shouldSpin={true}
+            spin="20s"
+          >
+            <StartIcon className="size-28 text-emerald-300" />
+          </HeroOrbit>
+          <HeroOrbit
+            size={710}
+            rotation={164}
+            shouldOrbit={true}
+            duration="25s"
+            shouldSpin={true}
+            spin="20s"
+          >
+            <SparkleIcon className="size-14 animate-pulse text-blue-500" />
+          </HeroOrbit>
+          <HeroOrbit
+            size={710}
+            rotation={32}
+            shouldOrbit={true}
+            duration="25s"
+            shouldSpin={true}
+            spin="20s"
+          >
+            <SparkleIcon className="size-14 animate-pulse text-blue-500" />
+          </HeroOrbit>
+
+          <HeroOrbit
+            size={650}
+            rotation={-5}
+            shouldOrbit={true}
+            duration="20s"
+            shouldSpin={true}
+            spin="18s"
+          >
+            <div className="size-2 rounded-full bg-green-500"></div>
+          </HeroOrbit>
+          <HeroOrbit
+            size={640}
+            rotation={34}
+            shouldOrbit={true}
+            duration="20s"
+            shouldSpin={true}
+            spin="18s"
+          >
+            <StartIcon className="size-8 text-cyan-600" />
+          </HeroOrbit>
+          <HeroOrbit
+            size={610}
+            rotation={85}
+            shouldOrbit={true}
+            duration="20s"
+            shouldSpin={true}
+            spin="18s"
+          >
+            <div className="size-3 rounded-full bg-green-500"></div>
+          </HeroOrbit>
+
+          <HeroOrbit
+            size={530}
+            rotation={140}
+            shouldOrbit={true}
+            duration="15s"
+            shouldSpin={true}
+            spin="15s"
+          >
+            <SparkleIcon className="size-8 animate-pulse text-cyan-500" />
+          </HeroOrbit>
+          <HeroOrbit
+            size={520}
+            rotation={-41}
+            shouldOrbit={true}
+            duration="15s"
+            shouldSpin={true}
+            spin="15s"
+          >
+            <div className="size-2 rounded-full bg-green-500"></div>
+          </HeroOrbit>
+          <HeroOrbit
+            size={510}
+            rotation={98}
+            shouldOrbit={true}
+            duration="15s"
+            shouldSpin={true}
+            spin="15s"
+          >
+            <StartIcon className="size-12 text-emerald-500" />
+          </HeroOrbit>
+
+          <HeroOrbit
+            size={440}
+            rotation={79}
+            shouldOrbit={true}
+            duration="12s"
+            shouldSpin={true}
+            spin="12s"
+          >
+            <SparkleIcon className="size-8 animate-pulse text-blue-500" />
+          </HeroOrbit>
+        </div>
       </div>
 
       <div className="flex flex-col items-center">

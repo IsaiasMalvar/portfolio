@@ -92,18 +92,24 @@ export const AboutSection = () => {
           eyebrow="About me"
           title="Balancing Technical Expertise with Unending Curiosity"
         />
-        <div className="mt-20 flex flex-col gap-8 px-1 md:grid md:grid-cols-3">
+        <div className="mt-20 flex flex-col gap-8 overflow-x-clip px-1 md:grid md:grid-cols-3">
           <Card className="h-[320px] p-0 md:col-start-1 md:col-end-3">
             <CardHeader
               description="Tools of the trade"
               className="px-6 pt-6"
             />
-            <ToolBoxItems items={toolBoxItems} className="mt-10" />
-            <ToolBoxItems
-              items={toolBoxItems}
-              className="mt-6"
-              itemsWrapperClassName="-translate-x-full"
-            />
+            <div className="flex flex-col">
+              <ToolBoxItems
+                items={toolBoxItems}
+                className="mt-10"
+                itemsWrapperClassName="animate-move-left [animation-duration:30s]"
+              />
+              <ToolBoxItems
+                items={toolBoxItems}
+                className="mt-10"
+                itemsWrapperClassName="animate-move-right [animation-duration:30s]"
+              />
+            </div>
           </Card>
           <Card className="flex h-[320px] flex-col p-0 md:col-start-3">
             <CardHeader description="Beyond software" className="px-6 py-6" />

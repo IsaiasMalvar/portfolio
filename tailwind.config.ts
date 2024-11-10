@@ -31,12 +31,21 @@ const config: Config = {
       },
       animation: {
         "ping-large": "ping-large 5s ease-out",
+        "move-left": "move-left 1s linear infinite",
       },
       keyframes: {
         "ping-large": {
           "75%,100%": {
             transform: "scale(3)",
             opacity: "0",
+          },
+        },
+        "move-left": {
+          "0%": {
+            transform: "translateX(0%)",
+          },
+          "100%": {
+            transform: "translateX(-50%)",
           },
         },
       },

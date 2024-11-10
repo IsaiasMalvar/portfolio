@@ -1,20 +1,23 @@
 import Card from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
-import StarIcon from "@/assets/icons/star.svg";
-import TypescriptIcon from "@/assets/icons/typescript-svgrepo-com.svg";
+import TypescriptIcon from "@/assets/icons/typescript.svg";
 import GitIcon from "@/assets/icons/github.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import SpringIcon from "@/assets/icons/spring-svgrepo-com.svg";
-import NextJsIcon from "@/assets/icons/nextjs-icon-svgrepo-com.svg";
+import NextJsIcon from "@/assets/icons/nextjs-svgrepo-com.svg";
 import DockerIcon from "@/assets/icons/docker-svgrepo-com (1).svg";
-import SQLIcon from "@/assets/icons/sql-database-generic-svgrepo-com.svg";
-import { TechIcon } from "@/components/TechIcon";
-import { title } from "process";
-
+import SQLIcon from "@/assets/icons/sql-svgrepo-com.svg";
+import CardHeader from "@/components/CardHeader";
+import ToolBoxItems from "@/components/ToolboxItems";
+import Tailwind from "@/assets/icons/tailwind-svgrepo-com.svg";
 const toolBoxItems = [
   {
     title: "TypeScript",
     iconType: TypescriptIcon,
+  },
+  {
+    title: "Tailwind",
+    iconType: Tailwind,
   },
   {
     title: "GitHub",
@@ -73,29 +76,21 @@ export const AboutSection = () => {
           eyebrow="About me"
           title="Balancing Technical Expertise with Unending Curiosity"
         />
-        <div className="mt-20">
-          <Card>
-            <div className="flex flex-col">
-              <div className="inline-flex items-center gap-2">
-                <StarIcon className="size-9 gap-2 text-emerald-300" />
-                <h3 className="text-3xl">Tools of the trade</h3>
-              </div>
-            </div>
-            <div>
-              {toolBoxItems.map((item) => (
-                <div key={item.title}>
-                  <TechIcon component={item.iconType} />
-                  <span>{item.title}</span>
-                </div>
-              ))}
-            </div>
+        <div className="mt-20 flex flex-col gap-8">
+          <Card className="h-[320px] p-0">
+            <CardHeader
+              description="Tools of the trade"
+              className="px-6 pt-6"
+            />
+            <ToolBoxItems items={toolBoxItems} className="mt-10" />
+            <ToolBoxItems
+              items={toolBoxItems}
+              className="mt-6"
+              itemsWrapperClassName="-translate-x-full"
+            />
           </Card>
           <Card>
-            <div>
-              <StarIcon />
-              <h3>After hanging the tools</h3>
-              <p>Some of my favourite interests beyond software:</p>
-            </div>
+            <CardHeader description="Beyond software" />
             <div>
               {hobbies.map((hobby) => (
                 <div key={hobby.title}>

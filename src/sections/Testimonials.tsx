@@ -100,7 +100,7 @@ export const TestimonialsSection = () => {
                     </div>
                   </div>
                 </div>
-                <p className="font-serif mt-4 text-sm font-extralight leading-6">
+                <p className="mt-4 font-serif text-sm font-extralight leading-6">
                   {certifications.text}
                 </p>
               </Card>

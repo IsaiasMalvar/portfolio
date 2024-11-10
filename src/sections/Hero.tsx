@@ -31,25 +31,25 @@ export const HeroSection = () => {
         <div className="hero-ring size-[1600px]"></div>
 
         <HeroOrbit size={800} rotation={-72}>
-          <StartIcon className="size-28 text-cyan-200" />
+          <StartIcon className="size-28 text-blue-500" />
         </HeroOrbit>
         <HeroOrbit size={640} rotation={34}>
           <StartIcon className="size-8 text-cyan-600" />
         </HeroOrbit>
         <HeroOrbit size={590} rotation={98}>
-          <StartIcon className="size-12 text-cyan-600" />
+          <StartIcon className="size-12 text-blue-500" />
         </HeroOrbit>
         <HeroOrbit size={430} rotation={-5}>
           <SparkleIcon className="size-8 animate-pulse text-cyan-500" />
         </HeroOrbit>
         <HeroOrbit size={440} rotation={79}>
-          <SparkleIcon className="size-8 animate-pulse text-cyan-500" />
+          <SparkleIcon className="size-8 animate-pulse text-blue-500" />
         </HeroOrbit>
         <HeroOrbit size={530} rotation={140}>
           <SparkleIcon className="size-8 animate-pulse text-cyan-500" />
         </HeroOrbit>
         <HeroOrbit size={710} rotation={164}>
-          <SparkleIcon className="size-14 animate-pulse text-cyan-500" />
+          <SparkleIcon className="size-14 animate-pulse text-blue-500" />
         </HeroOrbit>
         <HeroOrbit size={710} rotation={85}>
           <div className="size-3 rounded-full bg-cyan-300/20"></div>
@@ -70,10 +70,10 @@ export const HeroSection = () => {
         />
       </div>
       <div className="mx-auto w-full">
-        <h1 className="mt-8 px-5 text-center text-2xl tracking-widest md:text-5xl">
-          Isaias Malvar Guios <span>&bull;</span> Fullstack Developer
+        <h1 className="mt-8 px-5 text-center text-3xl uppercase tracking-wide md:text-5xl">
+          Isaias Malvar Guios <span>↔️</span> Fullstack Developer
         </h1>
-        <p className="mt-4 text-center tracking-wide text-white/90 md:text-lg">
+        <p className="mt-4 px-2 text-center tracking-wide text-white/90 md:text-lg">
           Focused in providing self-reliant, trustworthy sofware.
         </p>
       </div>

@@ -1,20 +1,29 @@
 import StarIcon from "@/assets/icons/star.svg";
+import { Fragment } from "react";
 const words = [
+  "Efficient",
+  "Robust",
+  "Scalable",
+  "Fault-Tolerant",
+  "Resilient",
+  "Optimized",
+  "Extensible",
+  "High Availability",
+  "Reliable",
+  "Low Latency",
   "Performant",
   "Accesible",
   "Secure",
   "Interactive",
-  "Scalable",
   "User Friendly",
   "Maintainable",
-  "Search Optimized",
   "Usable",
   "Reliable",
 ];
 export const TapeSection = () => {
   return (
-    <div className="py-16 overflow-x-clip lg:py-24">
-      <div className="bg-gradient-to-r from-emerald-300 to-sky-400  -rotate-3 -mx-1">
+    <div className="overflow-x-clip py-16 lg:py-24">
+      <div className="-mx-1 -rotate-3 bg-gradient-to-r from-emerald-300 to-sky-400">
         <div
           className="flex"
           style={{
@@ -22,14 +31,18 @@ export const TapeSection = () => {
               "linear-gradient(to right, transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9), black)",
           }}
         >
-          <div className="flex flex-none gap-4 py-3">
-            {words.map((word) => (
-              <div key={word} className="inline-flex gap-4 items-center">
-                <span className="text-gray-900 uppercase font-extrabold text-sm">
-                  {word}
-                </span>
-                <StarIcon className="size-6 text-gray-900 -rotate-12" />
-              </div>
+          <div className="animate-move-left flex flex-none gap-4 py-3 pr-4 [animation-duration:30s]">
+            {[...new Array(2)].fill(0).map((_, idx) => (
+              <Fragment key={idx}>
+                {words.map((word) => (
+                  <div key={word} className="inline-flex items-center gap-4">
+                    <span className="text-sm font-extrabold uppercase text-gray-900">
+                      {word}
+                    </span>
+                    <StarIcon className="size-6 -rotate-12 text-gray-900" />
+                  </div>
+                ))}
+              </Fragment>
             ))}
           </div>
         </div>

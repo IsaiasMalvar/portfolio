@@ -12,7 +12,7 @@ export const SectionHeader = ({
           {eyebrow}
         </p>
       </div>
-      <h2 className="mt-6 text-center text-3xl md:text-5xl">{title}</h2>
+      <h2 className="mt-6 px-1 text-center text-3xl md:text-5xl">{title}</h2>
     </>
   );
 };

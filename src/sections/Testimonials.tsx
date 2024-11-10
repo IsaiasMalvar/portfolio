@@ -73,35 +73,35 @@ export const TestimonialsSection = () => {
           title="Academic recognitions"
         />
         <div
-          className="mt-16 flex overflow-clip lg:mt-24"
+          className="mt-16 flex overflow-x-clip lg:mt-24"
           style={{
             maskImage:
-              "linear-gradient(to right, transparent, 20%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), black)",
+              "linear-gradient(to right, transparent, rgba(0, 0, 0, 0.7)5%, rgba(0, 0, 0, 0.9)90%, transparent)",
           }}
         >
           <div className="flex flex-none gap-8">
-            {certifications.map((testimonial) => (
+            {certifications.map((certifications) => (
               <Card
-                key={testimonial.name}
+                key={certifications.name}
                 className="max-w-xs md:max-w-md md:p-8"
               >
                 <div className="flex items-center gap-4">
                   <div className="inline-flex size-14 flex-none items-center justify-center rounded-full bg-gray-700 p-2">
                     <Image
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
+                      src={certifications.avatar}
+                      alt={certifications.name}
                       className="max-h-full object-contain"
                     />
                   </div>
                   <div>
-                    <div className="font-sans">{testimonial.name}</div>
+                    <div className="font-sans">{certifications.name}</div>
                     <div className="text-sm tracking-wide text-white/70">
-                      {testimonial.position}
+                      {certifications.position}
                     </div>
                   </div>
                 </div>
                 <p className="font-serif mt-4 text-sm font-extralight leading-6">
-                  {testimonial.text}
+                  {certifications.text}
                 </p>
               </Card>
             ))}

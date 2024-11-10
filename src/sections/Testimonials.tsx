@@ -37,15 +37,16 @@ const certifications = [
   },
   {
     name: "Universidad de La Laguna",
-    position: "Grado en Turismo",
+    position: "Tourism Major",
     text: (
       <>
-        For my thesis at <b>Universidad de La Laguna</b>, I explored the impact
-        of <b>technological startups</b> in the tourism industry—a project that
-        earned academic recognition and sparked my passion for <b>software</b>.
-        Analyzing how <b>tech innovation</b> reshapes travel experiences became
-        the gateway to my career in <b>web development</b>, where I aim to
-        bridge the worlds of <b>technology</b> and <b>tourism</b>.
+        For my thesis at the <b>Universidad de La Laguna</b>, I explored the
+        impact of <b>technological startups</b> in the tourism industry—a
+        project that earned academic recognition and sparked my passion for{" "}
+        <b>software</b>. Analyzing how <b>tech innovation</b> reshapes travel
+        experiences became the gateway to my career in <b>web development</b>,
+        where I aim to bridge the worlds of <b>technology</b> and <b>tourism</b>
+        .
       </>
     ),
     avatar: ull,

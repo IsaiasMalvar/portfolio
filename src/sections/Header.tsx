@@ -1,9 +1,10 @@
+import Link from "next/link";
 import { forwardRef } from "react";
 
 export const Header = forwardRef<HTMLDivElement, {}>((_, ref) => {
   return (
     <div
-      className="fixed top-3 z-10 flex w-full items-center justify-center"
+      className="fixed top-3 z-10 flex w-full items-center justify-center xs:px-3"
       ref={ref}
     >
       <nav className="flex gap-1 rounded-full border border-white/15 bg-white/10 p-0.5 backdrop-blur">
@@ -13,18 +14,15 @@ export const Header = forwardRef<HTMLDivElement, {}>((_, ref) => {
         <a href="#projects" className="nav-item">
           Projects
         </a>
-        <a href="#certifications" className="nav-item">
-          Certifications
-        </a>
         <a href="#about" className="nav-item">
           About
         </a>
-        <a
+        <Link
           href="/contact"
-          className="nav-item bg-white text-gray-900 hover:scale-125 hover:bg-white/70 hover:text-gray-900"
+          className="rounded-full bg-transparent px-4 py-1.5 text-sm duration-200 hover:scale-110"
         >
-          Contact
-        </a>
+          <span className="text-slate-50">CONTACT</span>
+        </Link>
       </nav>
     </div>
   );

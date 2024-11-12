@@ -87,7 +87,7 @@ export const TestimonialsSection = () => {
                 {certifications.map((certifications) => (
                   <Card
                     key={certifications.name}
-                    className="max-w-xs transition duration-300 hover:scale-125 md:max-w-md md:p-8"
+                    className="max-w-xs transition duration-300 hover:scale-105 md:max-w-md md:p-8"
                   >
                     <div className="flex items-center gap-4">
                       <div className="inline-flex size-14 flex-none items-center justify-center rounded-full bg-gray-700 p-2">

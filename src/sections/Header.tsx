@@ -20,7 +20,7 @@ export const Header = forwardRef<HTMLDivElement, {}>((_, ref) => {
           About
         </a>
         <a
-          href="#contact"
+          href="/contact"
           className="nav-item bg-white text-gray-900 hover:scale-125 hover:bg-white/70 hover:text-gray-900"
         >
           Contact
@@ -30,4 +30,4 @@ export const Header = forwardRef<HTMLDivElement, {}>((_, ref) => {
   );
 });
 
-Header.displayName = "Header"; // Optional: Helps with debugging in dev tools
+Header.displayName = "Header";

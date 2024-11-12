@@ -9,7 +9,10 @@ import SparkleIcon from "@/assets/icons/sparkle.svg";
 
 export const HeroSection = () => {
   return (
-    <div className="md:py-38 lg:py-45 relative z-0 overflow-x-clip py-28">
+    <div
+      className="md:py-38 lg:py-45 relative z-0 overflow-x-clip py-28"
+      id="home"
+    >
       <div
         className="absolute inset-0"
         style={{

@@ -12,21 +12,6 @@
   }
 }
 
-@keyframes marquee {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: 0;
-    transform: translateX(-100%);
-  }
-}
-
-.marquee-text {
-  @apply absolute inline-block whitespace-nowrap;
-  animation: marquee 10s linear infinite;
-}
-
 @layer utilities {
   .container {
     @apply lg:max-w-[1500px];

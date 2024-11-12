@@ -89,7 +89,7 @@ const hobbies = [
 
 export const AboutSection = () => {
   return (
-    <div className="py-20">
+    <div className="py-20" id="about">
       <div className="container md:max-w-[1300px]">
         <SectionHeader
           eyebrow="About me"
@@ -120,7 +120,7 @@ export const AboutSection = () => {
               {hobbies.map((hobby) => (
                 <motion.div
                   key={hobby.title}
-                  className="po absolute inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 px-6 py-1.5"
+                  className="absolute inline-flex cursor-pointer items-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 px-6 py-1.5"
                   style={{
                     left: hobby.left,
                     top: hobby.top,

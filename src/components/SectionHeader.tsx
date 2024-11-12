@@ -1,14 +1,18 @@
 export const SectionHeader = ({
   title,
   eyebrow,
+  size,
 }: {
-  title: string;
+  title?: string;
   eyebrow: string;
+  size?: string;
 }) => {
   return (
     <>
       <div className="flex justify-center">
-        <p className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-center text-4xl uppercase tracking-widest text-transparent sm:text-2xl">
+        <p
+          className={`bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-center text-2xl uppercase tracking-widest text-transparent sm:text-4xl md:text-${size}xl`}
+        >
           {eyebrow}
         </p>
       </div>

@@ -4,7 +4,6 @@ import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Image from "next/image";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
-import sky from "@/assets/images/sky.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import Card from "@/components/Card";
 
@@ -49,7 +48,7 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="relative overflow-clip pb-16 lg:py-24">
+    <section className="relative overflow-clip pb-16 lg:py-24" id="projects">
       <div className="container">
         <SectionHeader eyebrow="Code in action" title="Featured Projects" />
         <div className="mt-10 flex flex-col gap-20 md:mt-20">

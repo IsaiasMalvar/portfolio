@@ -175,7 +175,7 @@ const ContactForm: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="mx-auto flex w-[600px] items-center justify-center border border-white/20 border-l-transparent border-r-transparent border-t-transparent bg-transparent p-4 text-center text-3xl tracking-wider"
+              className="mx-auto flex w-[25%] items-center justify-center border-8 border-white/20 border-b-transparent border-t-transparent bg-transparent text-center text-3xl tracking-wider"
             >
               <span className="duration-100 active:scale-125">
                 {loading ? "Submitting..." : "Send"}
@@ -189,7 +189,7 @@ const ContactForm: React.FC = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="xs:gap-10 xs:p-6 xs:text-base flex w-full flex-col items-start justify-center gap-8 text-wrap p-5 text-sm"
+          className="flex w-full flex-col items-start justify-center gap-8 text-wrap p-5 text-sm xs:gap-10 xs:p-6 xs:text-base"
         >
           <input type="hidden" name="access_key" value={API_KEY} />
 
@@ -205,7 +205,7 @@ const ContactForm: React.FC = () => {
               onBlur={() => setIsNameFocused(false)}
               required
               placeholder="What is your&#10;name?"
-              className={`${!isNameFocused ? "cursor-pointer" : "cursor-auto"} bg-transparent text-slate-50 ${isNameFocused && !name ? "animate-pulse" : ""} xs:h-12 xs:text-xl text-wrap border border-white/20 border-l-transparent border-r-transparent border-t-transparent p-3 font-serif outline-none placeholder:text-wrap placeholder:font-sans md:h-auto md:text-3xl`}
+              className={`${!isNameFocused ? "cursor-pointer" : "cursor-auto"} bg-transparent text-slate-50 ${isNameFocused && !name ? "animate-pulse" : ""} text-wrap border border-white/20 border-l-transparent border-r-transparent border-t-transparent p-3 font-serif outline-none placeholder:text-wrap placeholder:font-sans xs:h-12 xs:text-xl md:h-auto md:text-3xl`}
             />
           </div>
           <div className="flex w-full flex-col text-wrap">
@@ -220,7 +220,7 @@ const ContactForm: React.FC = () => {
               onFocus={() => setIsEmailFocused(true)}
               required
               placeholder="What is your email?"
-              className={`${!isEmailFocused ? "cursor-pointer" : "cursor-auto"} bg-transparent text-slate-50 outline-none ${isEmailFocused && !email ? "animate-pulse" : ""} xs:h-12 xs:text-xl text-wrap border border-white/20 border-l-transparent border-r-transparent border-t-transparent bg-transparent p-3 font-serif placeholder:text-wrap placeholder:font-sans md:h-auto md:text-3xl`}
+              className={`${!isEmailFocused ? "cursor-pointer" : "cursor-auto"} bg-transparent text-slate-50 outline-none ${isEmailFocused && !email ? "animate-pulse" : ""} text-wrap border border-white/20 border-l-transparent border-r-transparent border-t-transparent bg-transparent p-3 font-serif placeholder:text-wrap placeholder:font-sans xs:h-12 xs:text-xl md:h-auto md:text-3xl`}
             />
           </div>
           <div className="flex w-full flex-col text-wrap">
@@ -232,7 +232,7 @@ const ContactForm: React.FC = () => {
               onChange={handleTextChange}
               onFocus={() => setIsMessageFocused(true)}
               onBlur={() => setIsMessageFocused(false)}
-              className={`${!isMessageFocused ? "cursor-pointer" : "cursor-auto"} bg-transparent text-slate-50 ${isMessageFocused && !text ? "animate-pulse" : ""} xs:h-24 xs:text-xl w-full p-3 font-serif outline-none placeholder:font-sans md:h-auto md:text-3xl`}
+              className={`${!isMessageFocused ? "cursor-pointer" : "cursor-auto"} bg-transparent text-slate-50 ${isMessageFocused && !text ? "animate-pulse" : ""} w-full p-3 font-serif outline-none placeholder:font-sans xs:h-24 xs:text-xl md:h-auto md:text-3xl`}
               name="message"
               placeholder="Enter Message"
             ></textarea>
@@ -240,7 +240,7 @@ const ContactForm: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="xs:text-xl xs:w-[50%] mx-auto mt-16 flex items-center justify-center border border-white/20 border-l-transparent border-r-transparent border-t-transparent bg-transparent p-2 text-center text-4xl tracking-wider duration-300"
+            className="mx-auto flex items-center justify-center border-8 border-white/20 border-b-transparent border-t-transparent bg-transparent text-center text-4xl tracking-wider duration-300 xs:w-[25%] xs:text-xl"
           >
             <span className="duration-100 active:scale-125">
               {loading ? "Submitting..." : "Send"}
@@ -248,9 +248,9 @@ const ContactForm: React.FC = () => {
           </button>
         </form>
       </section>
-      <div className="xs:bottom-10 absolute bottom-0 left-1/2 h-[30px] w-[150px] -translate-x-1/2 pb-1">
+      <div className="absolute bottom-0 left-1/2 h-[30px] w-[150px] -translate-x-1/2 pb-1 xs:bottom-10">
         <Link href={"/"} className="flex items-end justify-center gap-2">
-          <span className="xs:text-sm bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent md:text-xl">
+          <span className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent xs:text-sm md:text-xl">
             Main page
           </span>
           <div className="">

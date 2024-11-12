@@ -1,20 +1,21 @@
 "use client";
 
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 import { SectionHeader } from "./SectionHeader";
 import { TechIcon } from "./TechIcon";
 import houseIcon from "@/assets/icons/icons8-home.svg";
 
 import Link from "next/link";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const ContactForm: React.FC = () => {
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-  console.log(API_KEY);
-
+  const [token, setToken] = useState<string | null>("");
   const [error, setError] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [messageStatus, setMessageStatus] = useState<string | null>(null);
+  const [showCaptcha, setShowCaptcha] = useState<boolean>(false);
 
   const [name, setName] = useState<string | null>("");
   const [email, setEmail] = useState<string | null>("");
@@ -23,6 +24,17 @@ const ContactForm: React.FC = () => {
   const [isNameFocused, setIsNameFocused] = useState(false);
   const [isEmailFocused, setIsEmailFocused] = useState(false);
   const [isMessageFocused, setIsMessageFocused] = useState(false);
+
+  const onVerify = (token: string) => {
+    setToken(token); // Set the token once verification is done
+    setShowCaptcha(false); // Hide captcha after verification
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setShowCaptcha(true);
+  };
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -36,79 +48,60 @@ const ContactForm: React.FC = () => {
     setText(e.target.value);
   };
 
-  if (!API_KEY) {
-    console.error("API_KEY is not defined");
-    return null;
-  }
+  useEffect(() => {
+    if (token) {
+      const submitForm = async () => {
+        const data = {
+          access_key: API_KEY,
+          name,
+          email,
+          message: text,
+        };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
+        try {
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(data),
+          });
 
-    const formData = new FormData(e.target as HTMLFormElement);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
+          if (!response.ok) {
+            setMessageStatus("Submission failed, please try again.");
+            setLoading(false);
+            return;
+          }
 
-    if (!name || !email || !message) {
-      console.error("Form values are missing");
-      setMessageStatus("Please fill out all fields.");
-      setLoading(false);
-      return;
-    }
+          const result = await response.json();
+          if (result.success) {
+            setMessageStatus("Thanks for your time! ⭐");
+            setShowModal(true);
+            setTimeout(() => setShowModal(false), 4000);
+          }
+        } catch (error) {
+          setMessageStatus("Try again, please.");
+          setError(true);
+          setShowModal(true);
+          setTimeout(() => {
+            setShowModal(false);
+            setError(false);
+          }, 4000);
+        }
 
-    const data = {
-      access_key: API_KEY,
-      name,
-      email,
-      message,
-    };
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        console.error("Error with API response", response);
-        setMessageStatus("Submission failed, please try again.");
+        setName("");
+        setEmail("");
+        setText("");
         setLoading(false);
-        return;
-      }
+      };
 
-      const result = await response.json();
-      if (result.success) {
-        setLoading(false);
-        setMessageStatus("Thanks for your time! ⭐");
-        setShowModal(true);
-        setTimeout(() => {
-          setShowModal(false);
-        }, 4000);
-      }
-    } catch (error) {
-      console.error("Request failed", error);
-      setMessageStatus("Try again, please.");
-      setError(true);
-      setShowModal(true);
-      setLoading(false);
-      setTimeout(() => {
-        setShowModal(false);
-        setError(false);
-      }, 4000);
+      submitForm();
     }
-
-    setName("");
-    setEmail("");
-    setText("");
-  };
+  }, [token, API_KEY, name, email, text]);
 
   return (
-    <div className="relative overflow-clip">
+    <div className={`relative overflow-clip`}>
       <section className="xs:hidden md:relative md:flex md:h-screen md:items-center md:justify-center md:overflow-clip md:p-2">
         <div className="hero-ring size-[1600px]"></div>
         <div className="hero-ring size-[1820px]"></div>
@@ -122,7 +115,7 @@ const ContactForm: React.FC = () => {
           <SectionHeader eyebrow="I’d Love to Hear from You!" size="4" />
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col items-start justify-center gap-10 text-wrap p-5 pt-24 text-sm"
+            className={`flex flex-col items-start justify-center gap-10 text-wrap p-5 pt-24 text-sm ${showCaptcha ? "pointer-events-none" : ""}`}
           >
             <input type="hidden" name="access_key" value={API_KEY} />
             <div className="flex flex-col text-wrap">
@@ -130,6 +123,7 @@ const ContactForm: React.FC = () => {
                 Name
               </label>
               <input
+                autoComplete="off"
                 value={name!}
                 type="text"
                 onChange={handleNameChange}
@@ -146,6 +140,7 @@ const ContactForm: React.FC = () => {
                 Your email
               </label>
               <input
+                autoComplete="off"
                 value={email!}
                 type="email"
                 name="email"
@@ -162,6 +157,7 @@ const ContactForm: React.FC = () => {
                 Message
               </label>
               <textarea
+                autoComplete="off"
                 required
                 value={text!}
                 onChange={handleTextChange}
@@ -175,12 +171,19 @@ const ContactForm: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="mx-auto flex w-[25%] border-collapse items-center justify-center border-2 border-white/20 bg-transparent py-2 text-center text-3xl tracking-wider shadow-2xl hover:bg-blue-400/20"
+              className={`mx-auto flex w-[25%] border-collapse items-center justify-center border-2 border-white/20 bg-transparent py-2 text-center text-3xl tracking-wider shadow-2xl hover:bg-blue-400/20 disabled:pointer-events-none`}
             >
-              <span className="duration-100 active:scale-110">
-                {loading ? "..." : "Send"}
-              </span>
+              <span className="duration-100 active:scale-110">{"Send"}</span>
             </button>
+            <div
+              className={`absolute left-1/2 top-1/2 -translate-x-1/2 ${!showCaptcha ? "hidden" : ""}`}
+            >
+              <HCaptcha
+                sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                reCaptchaCompat={false}
+                onVerify={onVerify}
+              />
+            </div>
           </form>
         </div>
       </section>
@@ -189,7 +192,7 @@ const ContactForm: React.FC = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="flex w-full flex-col items-start justify-center gap-8 text-wrap p-5 text-sm xs:gap-10 xs:p-6 xs:text-base"
+          className={`flex w-full flex-col items-start justify-center gap-8 text-wrap p-5 text-sm xs:gap-10 xs:p-6 xs:text-base ${showCaptcha ? "pointer-events-none" : ""}`}
         >
           <input type="hidden" name="access_key" value={API_KEY} />
 
@@ -198,6 +201,7 @@ const ContactForm: React.FC = () => {
               Name
             </label>
             <input
+              autoComplete="off"
               type="text"
               onChange={handleNameChange}
               name="name"
@@ -213,6 +217,7 @@ const ContactForm: React.FC = () => {
               Your email
             </label>
             <input
+              autoComplete="off"
               type="email"
               name="email"
               onChange={handleEmailChange}
@@ -228,6 +233,7 @@ const ContactForm: React.FC = () => {
               Message
             </label>
             <textarea
+              autoComplete="off"
               required
               onChange={handleTextChange}
               onFocus={() => setIsMessageFocused(true)}
@@ -240,12 +246,19 @@ const ContactForm: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="mx-auto flex items-center justify-center border-2 border-white/20 p-2 text-center text-4xl tracking-wider duration-300 hover:bg-blue-400/20 xs:w-[30%] xs:text-xl sm:w-[25%]"
+            className="mx-auto flex items-center justify-center border-2 border-white/20 p-2 text-center text-4xl tracking-wider duration-300 hover:bg-blue-400/20 disabled:pointer-events-none xs:w-[30%] xs:text-xl sm:w-[25%]"
           >
-            <span className="duration-100 active:scale-110">
-              {loading ? "Submitting..." : "Send"}
-            </span>
+            <span className="duration-100 active:scale-110">{"Send"}</span>
           </button>
+          <div
+            className={`absolute left-1/2 top-1/2 -translate-x-1/2 ${!showCaptcha ? "hidden" : ""}`}
+          >
+            <HCaptcha
+              sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+              reCaptchaCompat={false}
+              onVerify={onVerify}
+            />
+          </div>
         </form>
       </section>
       <div className="absolute bottom-0 left-1/2 h-[30px] w-[150px] -translate-x-1/2 pb-1 xs:bottom-10">

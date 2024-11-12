@@ -175,9 +175,9 @@ const ContactForm: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="mx-auto flex w-[15%] border-collapse items-center justify-center border-8 border-white/20 border-b-transparent border-t-transparent bg-transparent text-center text-3xl tracking-wider shadow-2xl"
+              className="mx-auto flex w-[25%] border-collapse items-center justify-center border-2 border-white/20 bg-transparent py-2 text-center text-3xl tracking-wider shadow-2xl hover:bg-blue-400/20"
             >
-              <span className="duration-100 active:scale-125">
+              <span className="duration-100 active:scale-110">
                 {loading ? "..." : "Send"}
               </span>
             </button>
@@ -240,9 +240,9 @@ const ContactForm: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="mx-auto flex items-center justify-center border-8 border-white/20 border-b-transparent border-t-transparent bg-transparent p-2 text-center text-4xl tracking-wider duration-300 xs:w-[30%] xs:text-xl sm:w-[25%]"
+            className="mx-auto flex items-center justify-center border-2 border-white/20 p-2 text-center text-4xl tracking-wider duration-300 hover:bg-blue-400/20 xs:w-[30%] xs:text-xl sm:w-[25%]"
           >
-            <span className="duration-100 active:scale-125">
+            <span className="duration-100 active:scale-110">
               {loading ? "Submitting..." : "Send"}
             </span>
           </button>

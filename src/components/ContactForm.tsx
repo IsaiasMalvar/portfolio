@@ -26,8 +26,20 @@ const ContactForm: React.FC = () => {
   const [isMessageFocused, setIsMessageFocused] = useState(false);
 
   const onVerify = (token: string) => {
-    setToken(token); // Set the token once verification is done
-    setShowCaptcha(false); // Hide captcha after verification
+    console.log(token);
+    try {
+      setToken(token);
+      setTimeout(() => {
+        setShowCaptcha(false);
+      }, 2000);
+    } catch (error) {
+      setShowCaptcha(false);
+      setShowModal(true);
+      setMessageStatus("RECAPTCHA FAILED");
+      setTimeout(() => {
+        setShowModal(false);
+      }, 5000);
+    }
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -77,13 +89,18 @@ const ContactForm: React.FC = () => {
           const result = await response.json();
           if (result.success) {
             setMessageStatus("Thanks for your time! ⭐");
-            setShowModal(true);
+            setTimeout(() => {
+              setShowModal(true);
+            }, 2500);
+
             setTimeout(() => setShowModal(false), 4000);
           }
         } catch (error) {
           setMessageStatus("Try again, please.");
           setError(true);
-          setShowModal(true);
+          setTimeout(() => {
+            setShowModal(true);
+          }, 2500);
           setTimeout(() => {
             setShowModal(false);
             setError(false);
@@ -94,6 +111,7 @@ const ContactForm: React.FC = () => {
         setEmail("");
         setText("");
         setLoading(false);
+        setToken("");
       };
 
       submitForm();

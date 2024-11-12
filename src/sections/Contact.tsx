@@ -3,7 +3,7 @@ import grainImage from "@/assets/images/grain.jpg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 export const ContactSection = () => {
   return (
-    <div className="py-16 pt-14">
+    <div className="py-16 pt-14" id="contact">
       <div className="container md:max-w-[1300px]">
         <div className="relative z-0 overflow-hidden rounded-3xl bg-gradient-to-r from-emerald-300 to-sky-400 px-10 py-8 text-gray-900 sm:text-center md:inline-flex md:items-center md:gap-16 md:text-start">
           <div

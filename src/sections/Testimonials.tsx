@@ -68,7 +68,7 @@ const certifications = [
 
 export const TestimonialsSection = () => {
   return (
-    <div className="py-16 lg:py-24">
+    <div className="py-16 lg:py-24" id="certifications">
       <div className="container">
         <SectionHeader
           eyebrow="Certifiably Skilled"
@@ -81,7 +81,7 @@ export const TestimonialsSection = () => {
               "linear-gradient(to right, transparent, rgba(0, 0, 0, 0.7)5%, rgba(0, 0, 0, 0.9)90%, transparent)",
           }}
         >
-          <div className="animate-move-left flex flex-none gap-8 pr-8 [animation-duration:90s] hover:[animation-play-state:paused]">
+          <div className="flex flex-none animate-move-left gap-8 pr-8 [animation-duration:90s] hover:[animation-play-state:paused]">
             {[...new Array(2)].fill(0).map((_, idx) => (
               <Fragment key={idx}>
                 {certifications.map((certifications) => (

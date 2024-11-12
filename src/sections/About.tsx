@@ -89,7 +89,7 @@ const hobbies = [
 
 export const AboutSection = () => {
   return (
-    <div className="py-20">
+    <div className="py-20" id="about">
       <div className="container md:max-w-[1300px]">
         <SectionHeader
           eyebrow="About me"

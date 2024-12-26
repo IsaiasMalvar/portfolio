@@ -1,6 +1,9 @@
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import alojamiento from "@/assets/images/alojamient-alby.png";
+import blog from "@/assets/images/blog.png";
+import tams from "@/assets/images/tams.png";
 import Image from "next/image";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
@@ -9,40 +12,55 @@ import Card from "@/components/Card";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
-  },
-  {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
-    results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
-    ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
-  },
-  {
-    company: "Quantum Dynamics",
+    company: "Alojamiento Alby",
     year: "2023",
-    title: "AI Startup Landing Page",
+    title: "Private Accommodation Website - REACT & TYPESCRIPT",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Reduced maintenance costs by 80%" },
+      { title: "Great performance improvement" },
+      { title: "CAPTCHA and mail service ready" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "https://alojamientoalby.com/#/web",
+    image: alojamiento,
+  },
+  {
+    company: "Personal project",
+    year: "2024",
+    title: "Software Development MDX Blog - NEXT.JS & MDX",
+    results: [
+      {
+        title:
+          "Implemented a blog using Next.js and MDX for seamless content creation.",
+      },
+      {
+        title:
+          "Utilized Tailwind CSS for styling and Radix UI components for enhanced UI/UX.",
+      },
+      {
+        title:
+          "Configured ESLint and TypeScript for code quality and type safety.",
+      },
+    ],
+    link: "https://blog-pkuo.vercel.app/",
+    image: blog,
+  },
+  {
+    company: "Personal project",
+    year: "2024",
+    title: "Talent Acquisition Management Prototype - JAVA SPRING BOOT & REACT",
+    results: [
+      { title: "Axon Server Based talent management" },
+      {
+        title:
+          "Developed a scalable talent management system using Spring Boot microservices",
+      },
+      {
+        title:
+          "Implemented a responsive front-end with React, Tailwind CSS, and TypeScript",
+      },
+    ],
+    link: "https://github.com/IsaiasMalvar/talent-acquisition-microservices",
+    image: tams,
   },
 ];
 
@@ -84,7 +102,12 @@ export const ProjectsSection = () => {
                   </ul>
                   <a href={project.link}>
                     <button className="mt-8 inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-white px-6 font-semibold text-gray-950 md:w-auto">
-                      <span>Go to Site</span>
+                      {project.title ===
+                      "Talent Acquisition Management Prototype - JAVA SPRING BOOT & REACT" ? (
+                        <span>Go to Repository</span>
+                      ) : (
+                        <span>Go to Site</span>
+                      )}
                       <ArrowUpRight className="size-4" />
                     </button>
                   </a>

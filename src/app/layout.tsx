@@ -11,7 +11,7 @@ const calistoga = Calistoga({
   weight: ["400"],
 });
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Isaias Malvar's Portfolio",
   description: "Created with the help of Frontend Tribe",
 };
 

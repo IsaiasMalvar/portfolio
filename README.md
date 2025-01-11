@@ -21,7 +21,7 @@ Welcome to my personal portfolio website! This site showcases my projects, skill
 
 ## 🌐 Live Demo
 
-Visit the live site here: [Portfolio Website](https://your-deployed-website-url.com)  
+Visit the live site here: [Portfolio Website](https://blog-pkuo.vercel.app/)  
 
 
 ## 📂 Project Overview

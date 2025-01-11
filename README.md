@@ -22,7 +22,7 @@ Welcome to my personal portfolio website! This site showcases my projects, skill
 ## 🌐 Live Demo
 
 Visit the live site here: [Portfolio Website](https://your-deployed-website-url.com)  
-_(Replace the URL with the actual link to your deployed site.)_
+
 
 ## 📂 Project Overview
 
@@ -56,17 +56,6 @@ The website is designed to be clean, responsive, and user-friendly:
 ## 🛡️ Security
 
 All forms are protected with [hCaptcha](https://www.hcaptcha.com/) to ensure user interactions are secure and spam-free.
-
-## 🙌 Acknowledgements
-
-A huge thank you to the creators of the tools and libraries that power this project:
-
-- Next.js
-- React
-- Tailwind CSS
-- Framer Motion
-- hCaptcha
-- React Toastify
 
 ---
 

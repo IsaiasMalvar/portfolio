@@ -149,17 +149,11 @@ export const HeroSection = () => {
       </div>
       <div className="mx-auto w-full">
         <h1 className="mt-8 px-5 text-center text-3xl uppercase tracking-wide md:text-5xl">
-          Isaias Malvar Guios <span>↔️</span> Fullstack Developer
+          Isaias Malvar Guios <span>↔️</span> Backend Developer
         </h1>
         <p className="mt-4 px-2 text-center tracking-wide text-white/90 md:text-lg">
-          Focused in providing self-reliant, trustworthy sofware.
+          Building solid backends with a touch of full-stack know-how.
         </p>
-      </div>
-      <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
-        <button className="inline-flex h-12 items-center gap-2 rounded-xl border border-white/15 px-6">
-          <span className="font-medium tracking-wide">🧑‍💻 Explore my work</span>
-          <ArrowDown className="size-4" />
-        </button>
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ export const Header = forwardRef<HTMLDivElement, {}>((_, ref) => {
         </a>
         <Link
           href="/contact"
-          className="rounded-full bg-transparent px-4 py-1.5 text-sm duration-200 hover:scale-110"
+          className="rounded-full bg-black px-4 py-1.5 text-sm duration-200 hover:scale-110"
         >
           <span className="text-slate-50">CONTACT</span>
         </Link>

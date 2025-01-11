@@ -12,6 +12,24 @@ import Card from "@/components/Card";
 
 const portfolioProjects = [
   {
+    company: "Personal project",
+    year: "2024",
+    title: "Talent Acquisition Management Prototype - JAVA SPRING BOOT & REACT",
+    results: [
+      { title: "Axon Server Based talent management" },
+      {
+        title:
+          "Developed a scalable talent management system using Spring Boot microservices",
+      },
+      {
+        title:
+          "Implemented a responsive front-end with React, Tailwind CSS, and TypeScript",
+      },
+    ],
+    link: "https://github.com/IsaiasMalvar/talent-acquisition-microservices",
+    image: tams,
+  },
+  {
     company: "Alojamiento Alby",
     year: "2023",
     title: "Private Accommodation Website - REACT & TYPESCRIPT",
@@ -43,24 +61,6 @@ const portfolioProjects = [
     ],
     link: "https://blog-pkuo.vercel.app/",
     image: blog,
-  },
-  {
-    company: "Personal project",
-    year: "2024",
-    title: "Talent Acquisition Management Prototype - JAVA SPRING BOOT & REACT",
-    results: [
-      { title: "Axon Server Based talent management" },
-      {
-        title:
-          "Developed a scalable talent management system using Spring Boot microservices",
-      },
-      {
-        title:
-          "Implemented a responsive front-end with React, Tailwind CSS, and TypeScript",
-      },
-    ],
-    link: "https://github.com/IsaiasMalvar/talent-acquisition-microservices",
-    image: tams,
   },
 ];
 
@@ -96,7 +96,9 @@ export const ProjectsSection = () => {
                         className="flex gap-2 text-sm text-white/50 md:text-base"
                       >
                         <CheckIcon className="size-5 md:size-6" />
-                        <span>{result.title}</span>
+                        <span className="font-serif font-semibold">
+                          {result.title}
+                        </span>
                       </li>
                     ))}
                   </ul>

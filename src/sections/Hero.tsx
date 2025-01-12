@@ -152,7 +152,7 @@ export const HeroSection = () => {
           Isaias Malvar Guios <span>↔️</span> Backend Developer
         </h1>
         <p className="mt-4 px-2 text-center tracking-wide text-white/90 md:text-lg">
-          Building solid backends with a touch of full-stack know-how.
+          Building solid backends with a touch of frontend know-how.
         </p>
       </div>
     </div>

@@ -8,14 +8,6 @@ const footerLinks = [
     title: "Github",
     href: "https://github.com/IsaiasMalvar",
   },
-  {
-    title: "isamalk35@gmail.com",
-    href: "mailto:isamalk35@gmail.com",
-  },
-  {
-    title: "+34-664-229-258",
-    href: "tel:+34664229258",
-  },
 ];
 
 export const Footer = () => {

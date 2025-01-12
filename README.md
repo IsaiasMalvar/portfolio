@@ -47,11 +47,6 @@ The website is designed to be clean, responsive, and user-friendly:
 - **Color Scheme**: Modern, soft tones for a professional look.
 - **Animations**: Subtle animations to enhance user engagement without overwhelming.
 
-## ✨ Future Plans
-
-- Add a blog to share insights and knowledge.
-- Include a dark mode toggle for user preference.
-- Expand the project section with live demos and source code links.
 
 ## 🛡️ Security
 
